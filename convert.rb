@@ -19,11 +19,9 @@ loop do
           dec_del = ''
         else
           puts "Input invalid. Try again or Ctrl + C to cancel this process. "
-          dec_del = ''
       end
     else
       puts "Input invalid. Try again or Ctrl + C to cancel this process. "
-      dec_del = ''
   end
 end
 
@@ -34,7 +32,6 @@ loop do
   print "\n"
   unless File.directory?(src_path)
     puts "File path is not valid, or permission denied. Please try again."
-    src_path = ""
   else
     break
   end
@@ -47,8 +44,11 @@ loop do
   print "\n"
   unless File.directory?(dst_path)
     puts "File path is not valid, or permission denied. Please try again."
-    dst_path = ""
   else
     break
   end
 end
+
+print src_path
+print dst_path
+
