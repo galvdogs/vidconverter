@@ -27,17 +27,28 @@ loop do
   end
 end
 
-#Convert video to MP4
+#Pull path where source videos are located
 loop do
   print "Type the path where the videos are located (all videos at this path will be converted): "
   src_path = gets.chomp
+  print "\n"
   unless File.directory?(src_path)
-    "File path is not valid, or permission denied. Please try again."
+    puts "File path is not valid, or permission denied. Please try again."
     src_path = ""
   else
     break
+  end
 end
   
-    
-    
-    
+#Pull path where destination videos will be saved
+loop do
+  print "Type the path where the converted videos should be saved: "
+  dst_path = gets.chomp
+  print "\n"
+  unless File.directory?(dst_path)
+    puts "File path is not valid, or permission denied. Please try again."
+    dst_path = ""
+  else
+    break
+  end
+end
