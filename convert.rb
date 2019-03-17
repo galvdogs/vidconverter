@@ -29,8 +29,9 @@ end
 loop do
   print "Type the path where the videos are located (all videos at this path will be converted): "
   src_path = gets.chomp
+  src_path = File.expand_path(src_path)
   print "\n"
-  unless File.directory?(src_path)
+  unless Dir.exist?(src_path)
     puts "File path is not valid, or permission denied. Please try again."
   else
     break
@@ -41,8 +42,9 @@ end
 loop do
   print "Type the path where the converted videos should be saved: "
   dst_path = gets.chomp
+  dst_path = File.expand_path(dst_path)
   print "\n"
-  unless File.directory?(dst_path)
+  unless Dir.exist?(dst_path)
     puts "File path is not valid, or permission denied. Please try again."
   else
     break
