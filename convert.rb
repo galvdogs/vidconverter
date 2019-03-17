@@ -57,6 +57,7 @@ end
 #Convert files to mp4
 Dir.foreach(src_path) do |src_file|
   next if src_file == '.' or src_file == '..'
+  system "ffmpeg -i #{src_file} -c:av copy #{src_file}.mp4"
 end
 
 
