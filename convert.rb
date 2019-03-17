@@ -1,6 +1,7 @@
 #! /usr/bin/env ruby
 
 #Prompt user whether to delete original files after successful conversion
+dec_del = ''
 loop do
   print "Do you want original files to be deleted after conversion (y/n)? "
   dec_del = gets.chomp
@@ -26,6 +27,7 @@ loop do
 end
 
 #Pull path where source videos are located
+src_path = ''
 loop do
   print "Type the path where the videos are located (all videos at this path will be converted): "
   src_path = gets.chomp
@@ -39,6 +41,7 @@ loop do
 end
   
 #Pull path where destination videos will be saved
+dst_path = ''
 loop do
   print "Type the path where the converted videos should be saved: "
   dst_path = gets.chomp
