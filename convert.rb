@@ -54,6 +54,9 @@ loop do
   end
 end
 
-print src_path
-print dst_path
+#Convert files to mp4
+Dir.foreach(src_path) do |src_file|
+  next if src_file == '.' or src_file == '..'
+end
+
 
