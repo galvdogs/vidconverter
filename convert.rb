@@ -60,6 +60,7 @@ end
 Dir.foreach(src_path) do |src_file|
   next if src_file == '.' or src_file == '..'
   src_filename = File.basename(src_file, ".*")
+  puts "Conversion of \"#{src_file}\" in progress/ This may take several minutes..."
   system "ffmpeg -v error -i \"#{src_path}/#{src_file}\" -c:av copy \"#{dst_path}/#{src_filename}.mp4\""
   print "Conversion of \"#{src_file}\" in progress. This may take serveral minutes..."
   unless $? == 0
