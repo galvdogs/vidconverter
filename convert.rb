@@ -1,11 +1,11 @@
 #! /usr/bin/env ruby
 
-#Declare local variables.
+# Declare local variables.
 dec_del = ''
 src_path = ''
 dst_path = ''
 
-#Prompt user whether to delete original files after successful conversion.
+# Prompt user whether to delete original files after successful conversion.
 loop do
   print "Do you want original files to be deleted after conversion (y/n)? "
   dec_del = gets.chomp
@@ -30,7 +30,7 @@ loop do
   end
 end
 
-#Pull path where source videos are located.
+# Pull path where source videos are located.
 loop do
   print "Type the path where the videos are located (all videos at this path will be converted): "
   src_path = gets.chomp
@@ -43,7 +43,7 @@ loop do
   end
 end
   
-#Pull path where destination videos will be saved.
+# Pull path where destination videos will be saved.
 loop do
   print "Type the path where the converted videos should be saved: "
   dst_path = gets.chomp
@@ -56,13 +56,13 @@ loop do
   end
 end
 
-#File conversion to MP4.
+# File conversion to MP4.
 Dir.foreach(src_path) do |src_file|
   next if src_file == '.' or src_file == '..'
   src_filename = File.basename(src_file, ".*")
   puts "Conversion of \"#{src_file}\" in progress. This may take several minutes..."
   system "ffmpeg -v error -i \"#{src_path}/#{src_file}\" -c:av copy \"#{dst_path}/#{src_filename}.mp4\""
- #Result checking and error handling.
+ # Result checking and error handling.
   unless $? == 0
     puts "Conversion of \"#{src_file}\" failed. Consult error.txt for more info"
   else 
