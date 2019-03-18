@@ -59,7 +59,8 @@ end
 #Convert files to mp4
 Dir.foreach(src_path) do |src_file|
   next if src_file == '.' or src_file == '..'
-  system "ffmpeg -v error -i \"#{src_path}/#{src_file}\" -c:av copy \"#{dst_path}/#{src_file%.*}.mp4\""
+  src_filename = File.basename(src_file, ".*")
+  system "ffmpeg -v error -i \"#{src_path}/#{src_file}\" -c:av copy \"#{dst_path}/#{src_filename}.mp4\""
   unless $? == 0
     puts "Conversion of \#{src_file}\" failed. Consult error.txt for more info"
 end
