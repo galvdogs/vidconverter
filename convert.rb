@@ -65,7 +65,7 @@ Dir.foreach(src_path) do |src_file|
   unless $? == 0
     puts "Conversion of \"#{src_file}\" failed. Consult error.txt for more info"
   else 
-    "\"#{src_filename}.mp4\" created successfully"
+    puts "\"#{src_filename}.mp4\" created successfully"
   end
   print "\n"
 end
