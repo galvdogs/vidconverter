@@ -30,7 +30,7 @@ loop do
   end
 end
 
-# Pull path where source videos are located.
+# Get path where source videos are located.
 loop do
   print "Type the path where the videos are located (all videos at this path will be converted): "
   src_path = gets.chomp
@@ -43,7 +43,7 @@ loop do
   end
 end
   
-# Pull path where destination videos will be saved.
+# Get path where destination videos will be saved.
 loop do
   print "Type the path where the converted videos should be saved: "
   dst_path = gets.chomp
