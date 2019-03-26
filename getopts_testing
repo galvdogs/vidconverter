@@ -1,1 +1,9 @@
+#! /usr/bin/env ruby
 
+#How even does this work
+
+require 'optparse'
+
+params = ARGV.getopts("test"
+print "Enter here: "
+params :test = gets.chomp
