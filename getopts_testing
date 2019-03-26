@@ -4,6 +4,8 @@
 
 require 'optparse'
 
-params = ARGV.getopts("test"
+params = ARGV.getopts("test")
 print "Enter here: "
-params :test = gets.chomp
+params[:test] = gets.chomp
+
+puts params[:test]
